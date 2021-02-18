@@ -50,11 +50,6 @@ async def create_file(
     return saved_files
 
 
-@app.post("/files2/", response_model=schemas.ReportFile)
-async def create_report_file(report_file: schemas.ReportFileCreate, db: Session = Depends(get_db)):
-    return crud.create_report(db=db, report_file=report_file)
-
-
 @app.post("/reports/", response_model=schemas.Report)
 async def create_report(report: schemas.ReportCreate, db: Session = Depends(get_db)):
     return crud.create_report(db=db, report=report)
