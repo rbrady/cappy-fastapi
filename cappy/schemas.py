@@ -26,7 +26,8 @@ class ReportFile(BaseModel):
 # incoming
 class ReportCreate(BaseModel):
     source: str
-    result: str
+    policy: str
+    exit_code: int
     files: List[ReportFile] = []
     pod: str
     namespace: str
@@ -38,7 +39,8 @@ class ReportCreate(BaseModel):
 class Report(BaseModel):
     id: int
     source: str
-    result: str
+    policy: str
+    exit_code: int
     files: List[ReportFile] = []
     pod: str
     namespace: str

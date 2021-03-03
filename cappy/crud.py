@@ -17,7 +17,8 @@ def get_reports(db: Session, skip: int = 0, limit: int = 100):
 def create_report(db: Session, report: schemas.ReportCreate):
     db_report = models.Report(
         source=report.source,
-        result=report.result,
+        policy=report.policy,
+        exit_code=report.exit_code,
         pod=report.pod,
         namespace=report.namespace,
         tag=report.tag,

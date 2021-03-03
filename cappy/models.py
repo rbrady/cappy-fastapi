@@ -9,7 +9,8 @@ class Report(Base):
 
     id = Column(Integer, primary_key=True)
     source = Column(String)
-    result = Column(String)
+    policy = Column(String)
+    exit_code = Column(Integer)
     pod = Column(String)
     namespace = Column(String)
     tag = Column(String)
